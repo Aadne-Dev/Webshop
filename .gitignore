@@ -37,3 +37,7 @@ build/
 
 ## Environment variables ##
 .env
+
+### Angular / frontend build output ###
+src/main/resources/static/
+frontend/dist/
