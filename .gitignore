@@ -1,23 +1,56 @@
+##################################################
+# Root files
+##################################################
+
 HELP.md
+
+##################################################
+# Build / Output directories
+##################################################
+
+# Maven
 target/
-.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+src/main/resources/static/
 
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
+
+# Angular / Frontend build output
+frontend/dist/
+frontend/.angular/
+frontend/.cache/
+
+# Spring Boot static resources generated from frontend build
+src/main/resources/static/
+
+##################################################
+# Dependency directories
+##################################################
+
+# Node.js dependencies
+frontend/node_modules/
+
+# Maven wrapper JAR
+.mvn/wrapper/maven-wrapper.jar
+
+##################################################
+# IDE / Editor specific files
+##################################################
 
 ### IntelliJ IDEA ###
-.idea
+.idea/
 *.iws
 *.iml
 *.ipr
+
+### Eclipse / Spring Tool Suite ###
+.apt_generated/
+.classpath
+.factorypath
+.project
+.settings/
+.springBeans
+.sts4-cache/
 
 ### NetBeans ###
 /nbproject/private/
@@ -25,15 +58,64 @@ target/
 /dist/
 /nbdist/
 /.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
 
 ### VS Code ###
 .vscode/
 
-### For MacOs ##
+##################################################
+# OS / System specific files
+##################################################
+
+# macOS
 .DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+##################################################
+# Logs and temporary files
+##################################################
+
+# Application logs
+*.log
+logs/
+*.out
+
+# Coverage and reports
+coverage/
+*.lcov
+reports/
+
+# Temporary or cache directories
+tmp/
+temp/
+.cache/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+##################################################
+# Environment and config
+##################################################
+
+# Environment variable files
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+
+# JetBrains Fleet
+.fleet/
+
+# Local tool settings
+*.swp
+*.swo
 
 ## Environment variables ##
 .env
