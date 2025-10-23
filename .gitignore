@@ -1,69 +1,83 @@
 ##################################################
-# Root files
-##################################################
-
-HELP.md
-
-##################################################
-# Build / Output directories
+# Build / Output
 ##################################################
 
 # Maven
 target/
-!**/src/main/**/target/
-!**/src/test/**/target/
-src/main/resources/static/
+!backend/src/main/resources/static/
 
-
-# Angular / Frontend build output
+# Angular / Frontend
 frontend/dist/
 frontend/.angular/
 frontend/.cache/
 
-# Spring Boot static resources generated from frontend build
-src/main/resources/static/
-
 ##################################################
-# Dependency directories
+# Dependencies
 ##################################################
 
-# Node.js dependencies
+# Node.js
 frontend/node_modules/
 
 # Maven wrapper JAR
 .mvn/wrapper/maven-wrapper.jar
 
 ##################################################
-# IDE / Editor specific files
+# Logs, Reports, and Temp Files
 ##################################################
 
-### IntelliJ IDEA ###
+# Logs
+*.log
+logs/
+*.out
+
+# Coverage and reports
+coverage/
+*.lcov
+reports/
+
+# Temporary / cache
+tmp/
+temp/
+.cache/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+##################################################
+# IDE / Editor Configs
+##################################################
+
+# IntelliJ IDEA
 .idea/
-*.iws
 *.iml
 *.ipr
+*.iws
 
-### Eclipse / Spring Tool Suite ###
-.apt_generated/
-.classpath
-.factorypath
+# Eclipse / STS
 .project
+.classpath
 .settings/
 .springBeans
 .sts4-cache/
+.apt_generated/
+.factorypath
 
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-
-### VS Code ###
+# VS Code
 .vscode/
 
+# NetBeans
+nbproject/private/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+# JetBrains Fleet
+.fleet/
+
 ##################################################
-# OS / System specific files
+# System / OS Files
 ##################################################
 
 # macOS
@@ -77,49 +91,17 @@ ehthumbs.db
 Desktop.ini
 
 ##################################################
-# Logs and temporary files
-##################################################
-
-# Application logs
-*.log
-logs/
-*.out
-
-# Coverage and reports
-coverage/
-*.lcov
-reports/
-
-# Temporary or cache directories
-tmp/
-temp/
-.cache/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-
-##################################################
-# Environment and config
+# Environment / Configuration
 ##################################################
 
 # Environment variable files
 .env
-.env.local
-.env.development
-.env.production
-.env.test
+.env.*
 
-# JetBrains Fleet
-.fleet/
+##################################################
+# Miscellaneous
+##################################################
 
-# Local tool settings
+# Local swap / temp files
 *.swp
 *.swo
-
-## Environment variables ##
-.env
-
-### Angular / frontend build output ###
-src/main/resources/static/
-frontend/dist/
