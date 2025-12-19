@@ -2,9 +2,11 @@
 <main class="container">
     <div class="loginContainer">
         <h1>Webshop</h1>
-        <input class="inputLogin" id="username" type="text" placeholder="Username" />
-        <input class="inputLogin" id="password" type="text" placeholder="Password" />
-        <button class="buttonLogin" (click)="showAlert()">Login</button>
-        @if (alertVisible()) { <div class="tempAlert">That password is already in use by: AdminRoot. <br >Please select another password</div>}
+        <!-- [(ngModel)]="username" sends the contents of the input field to the variable "username" -->
+        <input class="inputLogin" id="username" type="text" placeholder="Username" [(ngModel)]="username" />
+        <input class="inputLogin" id="password" type="text" placeholder="Password" [(ngModel)]="password" />
+
+        <button class="buttonLogin" (click)="submitLogin()">Login</button>
+        @if (alertVisible()) { <div class="tempAlert">{{ alertMessage }}</div>}
     </div>
 </main>
