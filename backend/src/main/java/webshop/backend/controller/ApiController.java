@@ -8,6 +8,6 @@ public class ApiController {
 
     @GetMapping("/health")
     public String health() {
-        return "200 OK";
+        return "200";
     }
 }
