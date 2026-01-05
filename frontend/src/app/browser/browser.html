@@ -1,0 +1,40 @@
+<div class="shop-landing">
+
+  <section class="header text-center py-5">
+    <div class="container">
+      <h1 class="mb-3">Welcome to the shop!</h1>
+      <p class="lead mb-4">
+        Discover our latest products at great prices!
+      </p>
+      <a class="btn btn-outline-light ms-3" routerLink="/login">Login</a>
+    </div>
+  </section>
+
+<section class="products py-5">
+  <div class="container">
+
+    <div class="product-row">
+
+      <div class="product-col" *ngFor="let product of products">
+        <div class="card product-card h-100">
+          <img
+            [src]="product.image"
+            class="card-img-top"
+            alt="Product image"
+          />
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">{{ product.name }}</h5>
+            <p class="card-text text-muted">
+              NOK {{ product.price }}
+            </p>
+            <button class="btn btn-outline-primary">
+              View Item
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>

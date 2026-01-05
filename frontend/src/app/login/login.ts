@@ -1,13 +1,15 @@
 import { Component, inject, signal } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { CommonModule, Location } from '@angular/common';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'login-root',
   standalone: true,
-  imports: [HttpClientModule, FormsModule],
+  imports: [HttpClientModule, FormsModule, CommonModule],
   templateUrl: './login.html',
-  styleUrl: './login.css'
+  styleUrl: './login.scss'
 })
 export class Login {
 
@@ -20,15 +22,11 @@ export class Login {
   // Dependency injection
   public http = inject(HttpClient);
 
-  alertVisible = signal(false);
-
-  public showAlert(): void {  
-    this.alertVisible.set(true);
-  }
-
   ngOnInit() {
     console.log("init");
   }
+
+  constructor( private snackBar: MatSnackBar, private location: Location ) {}
 
   // Submit username and pwd, return JWT token (eventually). For now, just return the user inputs
   // to make sure the REST API works,
@@ -41,7 +39,20 @@ export class Login {
       { responseType: 'text' }
     ).subscribe(response => {
       this.alertMessage = response;
-      this.showAlert();
+      this.showToast(this.alertMessage);
+    });
+  }
+
+  goBack() {
+    this.location.back();
+  }
+
+  
+  showToast(message: string) {
+    this.snackBar.open(message, 'Close', {
+      duration: 10000,
+      horizontalPosition: 'center',
+      verticalPosition: 'top'
     });
   }
 }
