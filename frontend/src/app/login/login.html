@@ -1,12 +1,31 @@
+<main>
+<div class="login-page d-flex justify-content-center align-items-center">
+  <div class="login-container shadow p-4 rounded">
+    <h1 class="mb-4 text-center">Login</h1>
 
-<main class="container">
-    <div class="loginContainer">
-        <h1>Webshop</h1>
-        <!-- [(ngModel)]="username" sends the contents of the input field to the variable "username" -->
-        <input class="inputLogin" id="username" type="text" placeholder="Username" [(ngModel)]="username" />
-        <input class="inputLogin" id="password" type="text" placeholder="Password" [(ngModel)]="password" />
-
-        <button class="buttonLogin" (click)="submitLogin()">Login</button>
-        @if (alertVisible()) { <div class="tempAlert">{{ alertMessage }}</div>}
+    <div class="mb-3">
+      <input
+        class="form-control"
+        id="username"
+        type="text"
+        placeholder="Username"
+        [(ngModel)]="username"
+      />
     </div>
+
+    <div class="mb-3">
+      <input
+        class="form-control"
+        id="password"
+        type="password"
+        placeholder="Password"
+        [(ngModel)]="password"
+      />
+    </div>
+    <button class="btn btn-primary w-100" (click)="goBack()">
+      Back
+    </button>
+    <button class="btn btn-primary w-100" (click)="submitLogin()">Login</button>
+  </div>
+</div>
 </main>
