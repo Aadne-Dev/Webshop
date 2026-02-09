@@ -7,7 +7,7 @@ export class ApiService {
   constructor(private http: HttpClient) {}
 
   getProducts(): Observable<any> {
-    return this.http.get('/api/health');
+    return this.http.get('/api/products');
   }
 
 
