@@ -105,3 +105,4 @@ Desktop.ini
 # Local swap / temp files
 *.swp
 *.swo
+backend/build_output.txt
