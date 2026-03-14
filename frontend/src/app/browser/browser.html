@@ -12,18 +12,11 @@
 
 <section class="products py-5">
   <div class="container">
-
     <div class="product-row">
-
       <div class="product-col" *ngFor="let product of products">
         <div class="card product-card h-100">
-          <img
-            [src]="product.image"
-            class="card-img-top"
-            alt="Product image"
-          />
           <div class="card-body d-flex flex-column">
-            <h5 class="card-title">{{ product.name }}</h5>
+            <h5 class="card-title">{{ product.productname }}</h5>
             <p class="card-text text-muted">
               NOK {{ product.price }}
             </p>

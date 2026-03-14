@@ -1,6 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { Injectable } from '@angular/core';
+import { HttpClient, provideHttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-browser',
@@ -9,11 +12,18 @@ import { RouterModule } from '@angular/router';
   templateUrl: './browser.html',
   styleUrls: ['../../../node_modules/bootstrap/dist/css/bootstrap.min.css', './browser.scss']
 })
-export class Browser {
-  products = [
-    { name: 'Health Potion', price: 19, image: 'https://via.placeholder.com/300x200' },
-    { name: 'Grand Health Potion', price: 29, image: 'https://via.placeholder.com/300x200' },
-    { name: 'Invisibility Potion', price: 99, image: 'https://via.placeholder.com/300x200' },
-    { name: 'Maga Potion', price: 49, image: 'https://via.placeholder.com/300x200' }
-  ];
+export class Browser implements OnInit {
+  constructor(private http: HttpClient) {}
+  
+  products: any[] = [];
+
+  getProducts(): Observable<any> {
+    return this.http.get('/api/products');
+  }
+
+  ngOnInit() {
+    this.getProducts().subscribe(data => {
+      this.products = data;
+    });
+  }
 }
